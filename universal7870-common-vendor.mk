@@ -82,7 +82,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/hw/memtrack.exynos5.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/memtrack.exynos5.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/hw/thermal.universal7870.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/thermal.universal7870.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/libaudio-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaudio-ril.so \
-    vendor/samsung/universal7870-common/proprietary/vendor/lib/libaudioroute.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaudioroute.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/libExynosHWCService.so:$(TARGET_COPY_OUT_VENDOR)/lib/libExynosHWCService.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/libExynosOMX_Core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libExynosOMX_Core.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/libExynosOMX_Resourcemanager.so:$(TARGET_COPY_OUT_VENDOR)/lib/libExynosOMX_Resourcemanager.so \
@@ -196,6 +195,14 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal7870-common/proprietary/vendor/lib64/hw/gatekeeper.exynos7870.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/gatekeeper.samsungexynos7870.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib64/libMcClient.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libMcClient.so
 
+# we need to use /system/lib instead of /vendor/lib as
+# libaudioroute is defined by system/media/audio_route
+# this causes issues with loading audio primary module
+# and so result in no sound at all.
+# the REAL fix would be to ensure that AOSP does not
+# build libaudioroute at all as we use the blob anyways.
+PRODUCT_COPY_FILES += \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libaudioroute.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libaudioroute.so \
 
 # Vulkan and OpenCL
 PRODUCT_PACKAGES += libGLES_mali
