@@ -194,7 +194,12 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal7870-common/proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio@2.1.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib/hw/gatekeeper.exynos7870.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gatekeeper.samsungexynos7870.so \
     vendor/samsung/universal7870-common/proprietary/vendor/lib64/libMcClient.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libMcClient.so \
-    vendor/samsung/universal7870-common/proprietary/vendor/lib/libyasalgo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libyasalgo.so
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libyasalgo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libyasalgo.so \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libsomp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsomp.so \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libstr_capture_core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstr_capture_core.so \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libstr_capture_interface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstr_capture_interface.so \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libstr_preview_core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstr_preview_core.so \
+    vendor/samsung/universal7870-common/proprietary/vendor/lib/libstr_preview_interface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstr_preview_interface.so
 
 # we need to use /system/lib instead of /vendor/lib as
 # libaudioroute is defined by system/media/audio_route
