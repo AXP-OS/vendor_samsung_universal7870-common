@@ -7,4 +7,4 @@ service vendor.camera-provider-2-5 /vendor/bin/hw/android.hardware.camera.provid
     ioprio rt 4
     capabilities SYS_NICE
     writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks
-	setenv LD_PRELOAD "vendor/lib/libexynoscamera_shim.so"
+    setenv LD_PRELOAD "vendor/lib/libexynoscamera_shim.so"
